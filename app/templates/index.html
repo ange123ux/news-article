@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to news articles website </title>
-        {% endif %}
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome to news articles website </title>
+    {% endif %}
+</head>
+
+<body>
+    <!-- business neww section  -->
+    <h3> Business News</h3>
+    <ul>
+        {% for business_new in popular %}
+        <li>{{ business_new.title}}</li>
+        {% endfor %}
+</body>
+
 </html>
