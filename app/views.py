@@ -12,9 +12,11 @@ def index():
 
     # Getting business news
     business_news = get_news('business')
-    print(business_news)
-    title = 'Home - Home - Welcome to Online News Articles'
-    return render_template('index.html', title = title,business = business_news)  
+    entertainment_new = get_news('entertainment')
+    sports_new = get_news('sports')
+    technology_new = get_news('technology')
+    title = 'Home - Welcome to Online News Articles'
+    return render_template('index.html', title = title,business = business_news,entertainment=entertainment_new,sports=sports_new,technology=technology_new)  
 
 @app.route('/new/<int:new_id>')
 def new(new_id):
