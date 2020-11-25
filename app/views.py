@@ -1,6 +1,7 @@
 from flask import render_template
 from app import app
-from .request import get_news
+# from .request import get_news
+from .request import get_news,get_new
 
 # Views
 @app.route('/')
@@ -18,13 +19,18 @@ def index():
     title = 'Home - Welcome to Online News Articles'
     return render_template('index.html', title = title,business = business_news,entertainment=entertainment_new,sports=sports_new,technology=technology_new)  
 
-@app.route('/new/<int:new_id>')
-def new(new_id):
+@app.route('/new/<int:id>')
+def new(id):
 
     '''
     View new page function that returns the new details page and its data
     '''
-    return render_template('new.html',id = new_id)
+
+    new = get_new(id)
+    title = f'{new.title}'
+
+    return render_template('new.html',title = title,new = new
+
 
   
 

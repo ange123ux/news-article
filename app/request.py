@@ -54,3 +54,23 @@ def process_results(new_list):
             new_results.append(new_object)
 
     return new_results
+
+def get_new(id):
+    get_new_details_url = base_url.format(id,api_key)
+
+    with urllib.request.urlopen(get_new_details_url) as url:
+        new_details_data = url.read()
+        new_details_response = json.loads(new_details_data)
+
+        new_object = None
+        if new_details_response:
+            id = new_details_response.get('id')
+            title = new_details_response.get('title')
+            description = new_details_response.get('description')
+            urlToImage = new_details_response.get('urlToImage')
+            url = new_details_response.get('url')
+            publishedAt = new_details_response.get('publishedAt')
+
+            new_object = New(id,title,description,urlToImage,url,publishedAt)
+
+    return new_object    
