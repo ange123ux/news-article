@@ -2,8 +2,8 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEW_API_BASE_URL ='https://newsapi.org/{}?api_key={}'
-    pass
+    NEW_API_BASE_URL ='https://newsapi.org/v2/sources?category={}&apiKey={}'
+    # NEW_API_KEY =os.environ.get('NEW_API_KEY')
 
 
 

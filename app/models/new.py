@@ -1,6 +1,6 @@
-class Movie:
+class New:
     '''
-    Movie class to define Movie Objects
+    New class to define New Objects
     '''
 
     def __init__(self,id,title,description,image,url,publishedAt):

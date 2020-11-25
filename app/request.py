@@ -15,6 +15,7 @@ def get_news(category):
     Function that gets the json response to our url request
     '''
     get_news_url = base_url.format(category,api_key)
+    print(get_news_url)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -22,13 +23,13 @@ def get_news(category):
 
         new_results = None
 
-        if get_news_response['results']:
-            new_results_list = get_news_response['results']
+        if get_news_response['sources']:
+            new_results_list = get_news_response['sources']
             new_results = process_results(new_results_list)
 
     return new_results
 
-    def process_results(new_list):
+def process_results(new_list):
     '''
     Function  that processes the new result and transform them to a list of Objects
 
@@ -38,6 +39,7 @@ def get_news(category):
     Returns :
         new_results: A list of new objects
     '''
+
     new_results = []
     for new_item in new_list:
         id = new_item.get('id')
@@ -49,6 +51,6 @@ def get_news(category):
 
         if image:
             new_object = New(id,title,description,image,url,publishedAt)
-            movie_results.append(movie_object)
+            new_results.append(new_object)
 
     return new_results
