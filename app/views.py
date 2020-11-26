@@ -18,7 +18,7 @@ def index():
     entertainment_new = get_news('entertainment')
     sports_new = get_news('sports')
     technology_new = get_news('technology')
-    title = 'Home - Welcome to Online News Articles'
+    title = 'Welcome to Online News Articles'
     
     search_new = request.args.get('new_query')
 
