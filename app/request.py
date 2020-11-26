@@ -74,3 +74,18 @@ def get_new(id):
             new_object = New(id,title,description,urlToImage,url,publishedAt)
 
     return new_object    
+
+def search_new(new_name):
+    search_new_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(api_key,new_name)
+    with urllib.request.urlopen(search_new_url) as url:
+        search_new_data = url.read()
+        search_new_response = json.loads(search_new_data)
+
+        search_new_results = None
+
+        if search_new_response['sources']:
+            search_new_list = search_new_response['sources']
+            search_new_results = process_results(search_new_list)
+
+
+    return search_new_results
