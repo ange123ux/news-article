@@ -17,7 +17,7 @@ I consider myself as someone who is lucky because I grew up in a family where I 
 * signing up to github 
 * start using it
 ## Technologies Used
-I used programing languages to develop quote angular app such as HTML language, bootstrap, CSS for styling, and so much more.
+I used programing languages to develop quote angular app such as HTML language, bootstrap, CSS for styling, python, and so much more.
 
   ## PROJECTS THAT I DESIGNED
 [quote](https://ange123ux.github.io/quote/)
