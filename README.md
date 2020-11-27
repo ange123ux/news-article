@@ -2,7 +2,7 @@
 
 ### Description
 Online news articles are very important in our daily lives because they help us to stay updated about what's trending in the world. It is for this case that this application will be used to read different news, where the users will even be able to search for the favorite news. 
-11/3rd/2020.
+11/27th/2020.
 
 ### Author: Ange Uwimana
 
