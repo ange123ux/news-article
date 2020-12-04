@@ -1,67 +1,28 @@
-from flask import render_template
-from app import app
-# from .request import get_news
-from .request import get_news,get_new
-from .request import get_news,get_new,search_new
 from flask import render_template,request,redirect,url_for
+from app import app
+from .request import get_sources
+from .request import get_source_articles
 
 # Views
 @app.route('/')
 def index():
-
     '''
     View root page function that returns the index page and its data
     '''
+    # Getting artcle sources
+    all_sources = get_sources()
+    title = 'Home - Welcome to E-News Website'
 
-    # Getting business news
-    business_news = get_news('business')
-    entertainment_new = get_news('entertainment')
-    sports_new = get_news('sports')
-    technology_new = get_news('technology')
-    title = 'Welcome to Online News Articles'
+    return render_template('index.html', title = title, sources = all_sources )
+
+@app.route('/articles/<id>')
+def articles(id):
+    '''
+    View articles page function that returns the articles page and its data
+    '''
     
-    search_new = request.args.get('new_query')
+    # Getting artcle sources
+    all_article = get_source_articles(id)
+    title = 'All articles'
 
-    if search_new:
-        return redirect(url_for('search',new_name=search_new))
-    else:
-        return render_template('index.html', title = title,business = business_news,entertainment=entertainment_new,sports=sports_new,technology=technology_new)  
-
-@app.route('/new/<int:id>')
-def new(id):
-
-    '''
-    View new page function that returns the new details page and its data
-    '''
-
-    new = get_new(id)
-    title = f'{new.title}'
-
-    return render_template('new.html',title = title,new = new)
-
-@app.route('/search/<new_name>')
-def search(new_name):
-    '''
-    View function to display the search results
-    '''
-    new_name_list = new_name.split(" ")
-    new_name_format = "+".join(new_name_list)
-    searched_news = search_new(new_name_format)
-    title = f'search results for {new_name}'
-    return render_template('search.html',news = searched_news)
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return render_template('articles.html', title = title, articles = all_article )

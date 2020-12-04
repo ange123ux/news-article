@@ -1,28 +1,19 @@
 class Config:
-    '''
+    """
     General configuration parent class
-    '''
-    NEW_API_BASE_URL ='https://newsapi.org/v2/sources?category={}&apiKey={}'
-    # NEW_API_KEY =os.environ.get('NEW_API_KEY')
-
-
-
+    """   
+    MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
 class ProdConfig(Config):
-    '''
-    Production  configuration child class
-
+    """
+    Production configuration child class
     Args:
-        Config: The parent configuration class with General configuration settings
-    '''
+         Config: The pareny configuration class with General configuration settings
+    """
     pass
-
-
 class DevConfig(Config):
-    '''
-    Development  configuration child class
-
+    """
+    Dvelopment configuration child class
     Args:
-        Config: The parent configuration class with General configuration settings
-    '''
-
+         Config: The parent configuration class woth Gneral configuration settings
+    """
     DEBUG = True
