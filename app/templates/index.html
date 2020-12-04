@@ -9,11 +9,17 @@
 {% block content %}
 
 <!-- News sources -->
-<div class="jumbotron">
-
-    <center><h1>{{ title }}</h1></center>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <center>
+            <h1>{{ title }}</h1>
+        </center>
+        
+    </div>
+    <h2>
+        <center>NEWS SOURCES</center>
+    </h2>
 </div>
-<h2><center>All News Sources</center> </h2>
 <ul>
     {{ macro.displaySources(sources)}}
 </ul>
