@@ -21,13 +21,13 @@ def get_sources():
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
         
-
         if get_news_response['status'] == 'ok':
             news_results_list = get_news_response['sources']
             news_results = process_sources_results(news_results_list)
             print(news_results)
     
     return news_results
+
 def get_source_articles(id):
 
     '''
@@ -75,7 +75,9 @@ def process_articles_results(articles_list):
             article_object = article.Article(id,author,title,description,url,image_url,content,publishedAt)
             
             articles_results.append(article_object)
+
     return articles_results
+
 def process_sources_results(source_list):
     '''
     Function  that processes the sources result and transform them to a list of Objects
@@ -99,7 +101,9 @@ def process_sources_results(source_list):
             source_object = source.Source(id,name,description,url,category,language,country)
             
             sources_results.append(source_object)
+
     return sources_results
+
 def get_news(id):
     get_news_details_url = base_url.format(id,api_key)
     with urllib.request.urlopen(get_news_details_url) as url:
@@ -113,6 +117,7 @@ def get_news(id):
             url = news_details_response.get('url')
             category = news_details_response.get('category')
             news_object = News(id,name,descriprion,url,category,)
+
     return news_object
     
 def search_news(_name):
@@ -124,4 +129,5 @@ def search_news(_name):
         if search_movie_response['results']:
             search_movie_list = search_movie_response['results']
             search_movie_results = process_results(search_movie_list)
+            
     return search_movie_results

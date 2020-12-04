@@ -6,7 +6,7 @@
         <p> {{ source.description | truncate(30) }}</p>
         <p> {{ source.category}} </p> 
         <a href="{{ source.url}}" target="_blank">  {{ source.url}}</a><br>
-        <a href="/articles/{{ source.id}}" class="btn btn-primary">Specific Articles</a>
+        <a href="/articles/{{ source.id}}" class="btn btn-warning">Specific Articles</a>
     </div>
     {% endfor %}
 {% endmacro %}
@@ -19,7 +19,7 @@
                 <h4>{{ article.title }}</h3>
                 <p>{{ article.description }}</p>
                     <p>{{ article.publishedAt }}</p>
-                <a href="{{ article.url }}" class="btn btn-success" target="_blank">Read Full Article</a>
+                <a href="{{ article.url }}" class="btn btn-link" target="_self">Read Full Article</a>
             </div>
         </div>
     {% endfor %}
