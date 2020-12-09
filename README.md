@@ -20,7 +20,7 @@ I consider myself as someone who is lucky because I grew up in a family where I 
 I used programing languages to develop quote angular app such as HTML language, bootstrap, CSS for styling, python, and so much more.
 
   ## PROJECTS THAT I DESIGNED
-[quote](https://ange123ux.github.io/quote/)
+[quote]( https://ange123ux.github.io/news-article/)
 
 MIT License
 Permission is hereby granted, free of charge, to any person obtaining a copy
